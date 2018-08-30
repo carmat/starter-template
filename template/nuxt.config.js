@@ -27,6 +27,11 @@ module.exports = {
   },
 
   /*
+  ** Determine dev mode
+  */
+  dev: (process.env.NODE_ENV !== 'production'),
+
+  /*
   ** Determine environment variables
   */
   env: {
