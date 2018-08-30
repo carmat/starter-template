@@ -13,6 +13,14 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  /*
+  ** Import Sass manifest files
+  */
+  css: [
+    '@/assets/sass/main.scss'
+  ],
+
   /*
   ** Customize the progress bar color
   */
@@ -33,7 +41,22 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
-  }
-}
+    },
 
+    /*
+    ** Add legacy-browser support
+    */
+    postcss: [
+      require('autoprefixer')({
+        browsers: ['> 5%', 'ie >= 11']
+      })
+    ]
+  },
+
+  /*
+  ** Import modules for global use
+  */
+  modules: [
+    ['bootstrap-vue/nuxt', { css: false }],
+  ]
+}
