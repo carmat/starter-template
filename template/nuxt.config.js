@@ -7,7 +7,19 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '{{escape description }}' }
+      { hid: 'description', name: 'description', content: '{{escape description }}' },
+      { 'http-equiv': 'Cache-Control', content: 'no-cache, max-age=86400' },
+      { 'http-equiv': 'X-Content-Type-Options', content: 'nosniff' },
+      { 'http-equiv': 'Referrer-Policy', content: 'strict-origin-when-cross-origin' },
+      { 'http-equiv': 'Content-Security-Policy',
+        content: `
+          default-src 'self';
+          img-src 'self' data:;
+          script-src 'self' 'unsafe-inline';
+          style-src 'self' 'unsafe-inline';
+          font-src 'self';
+          connect-src 'self'; frame-src 'self';`
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
