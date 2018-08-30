@@ -82,5 +82,12 @@ module.exports = {
   */
   modules: [
     ['bootstrap-vue/nuxt', { css: false }],
+  ],
+
+  /*
+  ** Add API handlers and other middleware
+  */
+  serverMiddleware: [
+    '~/api/example.js'
   ]
 }
