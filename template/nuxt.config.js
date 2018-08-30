@@ -15,6 +15,13 @@ module.exports = {
   },
 
   /*
+  ** Determine environment variables
+  */
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
+
+  /*
   ** Import Sass manifest files
   */
   css: [
